@@ -40,6 +40,9 @@ module Xeroizer
     record :TaxRate
     record :TrackingCategory
     record :TrackingCategoryChild
+# ADDED
+    record :Option
+#
     record :BankTransaction
     record :BankTransfer
     record :User
@@ -79,6 +82,6 @@ module Xeroizer
         xero_client.xero_url = options[:xero_url] || "https://api.xero.com/payroll.xro/1.0"
         @payroll ||= PayrollApplication.new(xero_client)
       end
-          
+
   end
 end

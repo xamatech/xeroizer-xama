@@ -159,7 +159,14 @@ module Xeroizer
           request = to_xml
           log "[CREATE SENT] (#{__FILE__}:#{__LINE__}) #{request}"
 
-          response = parent.send(parent.create_method, request)
+# REMOVED
+#          response = parent.send(parent.create_method, request)
+
+# ADDED
+          request_options = {}
+          request_options['url'] = overwrite_url if respond_to?('overwrite_url')
+          response = parent.send(parent.create_method, request, request_options)
+#
 
           log "[CREATE RECEIVED] (#{__FILE__}:#{__LINE__}) #{response}"
 
