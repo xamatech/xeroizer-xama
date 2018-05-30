@@ -32,6 +32,13 @@ module Xeroizer
                                   when Hash     then parse_where_hash(options[:where])
                                 end
             end
+            
+            # added because, LinkedTransactions does not support WHERE query
+            # https://developer.xero.com/documentation/api/linked-transactions
+            if options[:params]
+              params.merge!(options[:params])
+            end
+            
             params[:offset] = options[:offset] if options[:offset]
             params[:page] = options[:page] if options[:page]
             params
