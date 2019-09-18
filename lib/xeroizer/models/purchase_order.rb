@@ -49,7 +49,8 @@ module Xeroizer
       string  :sub_total
       string  :total_tax
       string  :total
-      date    :updated_date_UTC
+      datetime_utc  :updated_date_utc, :api_name => 'UpdatedDateUTC'
+#      date    :updated_date_UTC
       boolean :has_attachments
 
       has_many     :line_items
