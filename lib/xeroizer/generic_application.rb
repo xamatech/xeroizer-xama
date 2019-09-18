@@ -32,6 +32,7 @@ module Xeroizer
     record :ManualJournal
     record :Organisation
     record :Payment
+    record :PaymentService
     record :Prepayment
     record :Overpayment
     record :PurchaseOrder
